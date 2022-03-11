@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<link rel="shortcut icon" href="https://www.codehub.vn/img/logo.png" />
+        <meta charset="utf-8">
+        <title>Home page</title>
+    </head>
+<body style="background-color: rgba(255,0,0,0.5);"> <!-- Set background theo rgb -->
+<p>Đoạn văn có chứa chữ được <span style="color: blue;">màu xanh khi dùng span chen vào đoạn</span></p>
+
+<h1 style="font-size:30px; color:blue; font-style:italic">Đây là Thẻ đề mục 1</h1> 
+<p style="text-align: center">Câu đầu tiên trong đoạn văn.<br> Câu thứ hai được xuống dòng mới</p>
+<p>Đây là một đoạn văn bản chứa <strong>chữ in đậm</strong></p>
+    <p>Đây là <sub> chữ dưới dòng (subscript)</sub> và đây là <sup>chữ trên dòng (superscript)</sup></p>
+<a href="https://www.facebook.com/lacthanaka/" title="FB.vn"><button>Myfb</button></a> //link vao button 
+<a href="./Domtextinput" title="HTML"><button>Vào Domtextinput</button></a> //link vao button 
+<h3>Thẻ đề mục 3</h3>
+<a href="https://www.codehub.vn" title="Trang Chủ CodeHub.vn">
+    <img src="https://www.codehub.vn/img/logo.png" width="100" height="100">
+</a> Nhúng link vào ảnh codehub
+<ul> //Danh sach
+  <li>Cà phê</li>
+  <li>Trà</li>
+  <li>Nước ngọt</li>
+  <li>Bia</li>
+  <li>Rượu</li>
+</ul>
+<img src="https://mui.com/static/ads-in-house/tidelift.png" alt="Logo CodeHub.vn" width="200" height="200"> 
+<p> <br></br> </p>
+<button type="button" onclick="alert(1)">click</button>
+	<script>
+	var a='toidicode.com';
+	document.writeln(a);
+	</script>
+
+<script>
+var a = 10;
+var b = 5;
+document.write(a + " chia " + b + " bằng: " + a/b + "<br/>");
+for (var i = 1; i <= 10; i++) {
+    document.write('Dòng số: ' + i + '<br/>');
+}
+</script>
+<script>
+function getSum(a = 1, b = 2) {
+	return a + b;
+}
+document.write(getSum());
+
+//tạo khoảng ngăn cách cho các bạn dễ nhìn
+document.write('<br>__________________________________<br>');
+document.write(getSum(4,5));
+
+</script>
+<p> <br></br> </p>
+<script>
+function testpromt() {
+	if (result = prompt('Chào bạn, năm nay bạn bao nhiêu tuổi?')) {
+    		if (result>=18){
+			alert("Mày đã trưởng thành");
+		}
+		else{
+			alert("Mày vẫn nhỏ quá");
+			if (confirm('Mày vẫn muốn tiếp tục?')) {
+				
+    
+			} else {
+    				document.write('Thôi nhé?');
+			}	
+		}
+	} 	
+	else {
+    			alert("Không trả lời à mày");
+			testpromt();
+	}
+}
+
+</script>
+<button type="button" onclick=testpromt()>Testbuttonpromt</button>
+</body>
+</html>
