@@ -6,8 +6,8 @@ http.createServer(function (request, response) {
     var path = parse.path;
     //Nếu không truyền tham số lên url thì load trang home.html
     if (path === '/') {
-        console.log(path+'./tag.html');
-        fs.readFile('./tag.html', function (error, data) {
+        console.log(path+'./html.html');
+        fs.readFile('./index.html', function (error, data) {
             response.writeHead('200', {'Content-Type': 'text/html'});
             response.end(data);
         })
