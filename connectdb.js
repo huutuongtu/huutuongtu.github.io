@@ -17,4 +17,14 @@ connection.query('USE database_nmcnpm_nhom1', function(err) {
   if (err) throw err;
 
   console.log('Query Successful');
-});
+  selectall();
+})
+function selectall(){
+    connection.query('SELECT * FROM database_nmcnpm_nhom1.users;', function(err,results) {
+    if (err) throw err;
+  
+    console.log(results)
+  })
+}
+
+;
