@@ -1,0 +1,65 @@
+body{
+    background-color: rgb(58, 54, 50);
+    
+}
+img{
+    
+    border-radius: 50%;
+    height: 500px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+header{
+    border-radius: 10%;
+    background-color: rgb(66, 58, 58);
+    color: blueviolet;
+    margin: 20px;
+    padding: 20px 100px 20px 100px;
+    height: 650px;
+    
+}
+.myname{
+    
+    font-size:xx-large;
+    font-family: sans-serif;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+     0px -5px 35px rgba(255,255,255,0.3);
+}
+span{
+    text-align: center;
+}
+section{
+    background-color: aqua;
+    color: black;
+    padding: 50px;
+    margin: 20px;
+}
+div{
+    background-color: yellow;
+    display: inline;
+    padding: 50px;
+    margin: 20px;
+}
+#div1{
+    margin: 0px 0px 0px 20px;
+    
+}
+#div2{
+    margin: 0px 0px 0px 20px;
+    
+}
+
+#div3{
+    margin: 0px 0px 0px 20px;
+    
+}
+
+#id{
+    margin: 30px;
+}
