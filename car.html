@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play Audio on Button Click</title>
+    <!-- Internal -->
+    <style>
+        button {
+            background-color: #2f0a69; /* Customize button color */
+            color: white; /* Customize button text color */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Add rounded corners */
+            padding: 10px 20px; /* Adjust padding for desired button size */
+            margin: 10px; /* Add margin between buttons */
+            font-size: 16px; /* Customize text size */
+            cursor: pointer; /* Indicate clickable behavior */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+        }
+        button:hover { /* Styling for hover effect */
+            opacity: 0.8; /* Change button opacity on hover */
+        }
+
+        button-container {
+            display: flex; /* Enable flexible layout */
+            flex-wrap: wrap; /* Allow buttons to wrap onto new lines */
+            justify-content: space-around; /* Distribute buttons evenly horizontally */
+            align-items: center; /* Align buttons vertically within the container */
+            margin: 20px auto; /* Add margin for better spacing */
+            padding: 10px; /* Add padding for better button appearance */
+        }
+
+      </style>
+</head>
+<body>
+    <audio src="./car_support/bai1.wav" id="1"></audio>
+    <audio src="./car_support/bai2.wav" id="2"></audio>
+    <audio src="./car_support/bai3.wav" id="3"></audio>
+    <audio src="./car_support/bai4.wav" id="4"></audio>
+    <audio src="./car_support/bai5.wav" id="5"></audio>
+    <audio src="./car_support/bai6.wav" id="6"></audio>
+    <audio src="./car_support/bai7.wav" id="7"></audio>
+    <audio src="./car_support/bai8.wav" id="8"></audio>
+    <audio src="./car_support/bai9.wav" id="9"></audio>
+
+    <audio src="./car_support/xuatphat.wav" id="xuatphat"></audio>
+    <audio src="./car_support/ketthuc.wav" id="ketthuc"></audio>
+    <audio src="./car_support/chamvach5.wav" id="chamvach5"></audio>
+    <audio src="./car_support/chamvach5_25.wav" id="chamvach5_25"></audio>
+    <audio src="./car_support/chamvach25.wav" id="chamvach25"></audio>
+
+
+    <button onclick="Reset('xuatphat')">Xuất phát</button>
+    <button onclick="BaiX('1')">1. Dừng xe trước đường dành cho người đi bộ.</button>
+    <button onclick="BaiX('2')">2. Dừng xe, lái xe ngang dốc.</button>
+    <button onclick="BaiX('3')">3. Qua vệt bánh xe, đường hẹp vuông góc.</button>
+    <button onclick="BaiX('4')">4. Qua ngã 4 có đèn báo.</button>
+    <button onclick="BaiX('5')">5. Đi đường chữ S (đường quanh co).</button>
+    <button onclick="BaiX('6')">6. Ghép xe vào chỗ đỗ ngang.</button>
+    <button onclick="BaiX('7')">7. Dừng xe nơi có đường sắt cắt ngang.</button>
+    <button onclick="BaiX('8')">8. Thay đổi tốc độ khi lái xe.</button>
+    <button onclick="BaiX('9')">9. Ghép xe vào chỗ đỗ dọc.</button>
+    <button onclick="Reset('ketthuc')">Kết thúc</button>
+    <button onclick="ChamVach()">Chạm vạch</button>
+    
+    <script>
+        let score_final = 100;
+        let findex = 10;
+        const int_id = 0;
+
+
+        function Reset(stringInput) {
+            findex = 10;
+            score_final = 100;
+            const audio = document.getElementById(stringInput);
+            if ('userinteraction' in document || userInteraction()) {
+                audio.play();
+            } else {
+                console.error('Audio playback failed due to user interaction requirement.');
+            }
+            console.log(findex)
+        }
+
+
+
+        function BaiX(stringInput) {
+            try{
+                const int_id = parseInt(stringInput);
+                findex = int_id
+                console.log(list_bai)
+                console.log(findex)
+            }
+            catch (error) {
+                console.error("An error occurred:", error.message);
+            }
+            finally {
+                const audio = document.getElementById(stringInput);
+                if ('userinteraction' in document || userInteraction()) {
+                    audio.play();
+                } else {
+                    console.error('Audio playback failed due to user interaction requirement.');
+                }
+            }
+        }
+
+
+        function ChamVach() {
+            if (findex==1){
+                score_final-=25;
+                const audio = document.getElementById("chamvach25");
+                if ('userinteraction' in document || userInteraction()) {
+                    audio.play();
+                } else {
+                    console.error('Audio playback failed due to user interaction requirement.');
+                }
+            }
+            else{
+                if (findex!=10){
+                    score_final-=5;
+                    if (score_final<80){
+                        const audio = document.getElementById("chamvach5_25");
+                        if ('userinteraction' in document || userInteraction()) {
+                            audio.play();
+                        } else {
+                            console.error('Audio playback failed due to user interaction requirement.');
+                        }
+                        
+                    }
+                    else{
+                        const audio = document.getElementById("chamvach5");
+                        if ('userinteraction' in document || userInteraction()) {
+                            audio.play();
+                        } else {
+                            console.error('Audio playback failed due to user interaction requirement.');
+                        }
+
+                    }
+                }
+
+            }
+
+            console.log(score_final)
+
+
+            
+        }
+
+        // Handle user interaction for Chrome/Safari
+        function userInteraction() {
+            const events = ['mousedown', 'mouseup', 'keydown', 'touchstart', 'touchend'];
+            for (const event of events) {
+                document.addEventListener(event, () => {}, { once: true });
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
