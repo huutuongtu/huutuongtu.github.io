@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="OlaWod">
+
+    <title>Knowledge Transfer Voice Conversion Demo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="./css/fontawesome.all.min.css">
+	
+	<script defer src="./js/fontawesome.all.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+	<!-- Custom scripts for this template -->
+	<script src="js/clean-blog.js"></script>
+	<script src="js/interp.js"></script>
+
+</head>
+
+<body id="page-top">
+
+	<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+		<div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="#page-top">Knowledge Transfer Voice Conversion</a>
+			<button class="navbar-toggler navbar-toggler-right font-weight-bold text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">Abstract</a>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ens2s">English</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#result">English Results</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+        <div class="container" style="padding-bottom:10px">
+            <div class="row">
+                <div class="col-lg-10 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>Knowledge Transfer Voice Conversion Demo</h1>
+                        <span class="subheading">
+                            Voice Conversion for Low-Resource Languages via Knowledge Transfer and Domain-Adversarial Training
+                        </span>
+                    </div>
+                </div>
+            </div>
+			
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-14 col-md-12 mx-auto">
+                <div class="post-preview" id="abstract">
+                    <h2 class="post-title">
+                        Abstract
+                    </h2>
+                    <p>
+                        Voice conversion (VC) aims to transform speech from a source speaker to a target speaker while preserving the original linguistic content. However, existing VC models typically require large annotated datasets containing transcripts and speaker labels, posing significant challenges for low-resource languages. In any-to-any voice conversion (VC) models that do not rely on annotated datasets, disentangling speaker information from the source speech while preserving linguistic content remains a significant challenge, often resulting in outputs that retain attributes of the source speaker. This paper introduces a novel low-resource VC model that combines knowledge transfer with domain-adversarial training to leverage information from high-resource languages for the benefit of low-resource languages. The proposed approach utilizes pre-trained models, with domain-adversarial training enabling the separation of content from speaker identity without the need for annotated datasets. Objective and subjective evaluations on the low-resource Vietnamese language demonstrate that the proposed model outperforms existing methods in terms of naturalness and speaker similarity in low-resource scenarios.
+					</p>
+                </div>
+					
+				
+                <div class="post-preview">
+                    <h2 class="post-title">
+                        Sample
+                    </h2>
+
+                    <h3 class="post-meta" id="ens2s">
+                        English Seen-to-Seen
+                    </h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Source</th>
+                                <th scope="col">Target</th>
+                                <th scope="col">Conversion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>F_p361_004.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\F_p361_004.wav">
+                                    </audio>
+                                </td>
+                                <td>M_p246_266.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\M_p246_266.wav">
+                                    </audio>
+                                </td>
+                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\s2s/HWGFHN.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\s2s/HWGFHN.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2s/HWGFHN.wav">
+                                    </audio> 
+									vcvc+cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2s/HWGFHN.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>M_p360_157.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\M_p360_157.wav">
+                                    </audio>
+                                </td>
+                                <td>F_p361_004.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\F_p361_004.wav">
+                                    </audio>
+                                </td>
+                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\s2s/332IEB.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\s2s/332IEB.wav">
+                                    </audio>     
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2s/332IEB.wav">
+                                    </audio> 
+									vcvc+cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2s/332IEB.wav">
+                                    </audio> 
+                                </td>
+        
+                            </tr>
+                            
+                            <tr>
+                                <td>M_p279_353.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\M_p279_353.wav">
+                                    </audio>
+                                </td>
+                                <td>M_p246_109.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\M_p246_109.wav">
+                                    </audio>
+                                </td>
+                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\s2s/ZYRHT2.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\s2s/ZYRHT2.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2s/ZYRHT2.wav">
+                                    </audio> 
+									vcvc+cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2s/ZYRHT2.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>F_p300_041.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\F_p300_041.wav">
+                                    </audio>
+                                </td>
+                                <td>F_p361_004.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\F_p361_004.wav">
+                                    </audio>
+                                </td>
+                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\s2s/T7CPO9.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\s2s/T7CPO9.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2s/T7CPO9.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2s/T7CPO9.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+					<hr>
+                    <h3 class="post-meta" id="ens2u">
+                        English Seen-to-Unseen
+                    </h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Source</th>
+                                <th scope="col">Target</th>
+                                <th scope="col">Conversion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>M_p246_034.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\M_p246_034.wav">
+                                    </audio>
+                                </td>
+                                <td>F_56_1733_000012_000002.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\F_56_1733_000012_000002.wav">
+                                    </audio>
+                                </td>
+                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\s2u/PCD7J4.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\s2u/PCD7J4.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/PCD7J4.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/PCD7J4.wav">
+                                    </audio>
+
+                                </td>
+
+                            </tr>
+                            
+                            <tr>
+                                <td>F_p300_263.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\F_p300_263.wav">
+                                    </audio>
+                                </td>
+                                <td>M_17_363_000006_000001.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\M_17_363_000006_000001.wav">
+                                    </audio>
+                                </td>
+                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\s2u/RIQWM5.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\s2u/RIQWM5.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>F_p300_263.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\F_p300_263.wav">
+                                    </audio>
+                                </td>
+                                <td>F_56_1730_000009_000003.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\F_56_1730_000009_000003.wav">
+                                    </audio>
+                                </td>
+                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\s2u/N46QA3.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\s2u/N46QA3.wav">
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>M_p360_157.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\M_p360_157.wav">
+                                    </audio>
+                                </td>
+                                <td>M_17_362_000007_000002.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\M_17_362_000007_000002.wav">
+                                    </audio>
+                                </td>
+                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\s2u/1EZSKO.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\s2u/1EZSKO.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+					<hr>
+					<h3 class="post-meta" id="enu2s">
+                        English Unseen-to-Seen
+                    </h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Source</th>
+                                <th scope="col">Target</th>
+                                <th scope="col">Conversion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>M_17_362_000007_000002.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\M_17_362_000007_000002.wav">
+                                    </audio>
+                                </td>
+                                <td>M_p279_350.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\M_p279_350.wav">
+                                    </audio>
+                                </td>
+                                                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\u2s/V5395O.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\u2s/V5395O.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>F_56_1730_000009_000003.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\F_56_1730_000009_000003.wav">
+                                    </audio>
+                                </td>
+                                <td>F_p323_387.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\F_p323_387.wav">
+                                    </audio>
+                                </td>
+                                                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\u2s/LUSXRL.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\u2s/LUSXRL.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>M_17_362_000007_000002.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\M_17_362_000007_000002.wav">
+                                    </audio>
+                                </td>
+                                <td>F_p300_041.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\F_p300_041.wav">
+                                    </audio>
+                                </td>
+                                                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\u2s/RCNYMM.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\u2s/RCNYMM.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>F_56_1730_000009_000003.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\F_56_1730_000009_000003.wav">
+                                    </audio>
+                                </td>
+                                <td>M_p246_052.wav
+                                    <audio controls preload="none">
+                                        <source src="data/seen_en\M_p246_052.wav">
+                                    </audio>
+                                </td>
+                                                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\u2s/45G89I.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\u2s/45G89I.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+					<hr>
+					<h3 class="post-meta" id="enu2u">
+                        English Unseen-to-Unseen
+                    </h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Source</th>
+                                <th scope="col">Target</th>
+                                <th scope="col">Conversion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>M_17_362_000007_000002.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\M_17_362_000007_000002.wav">
+                                    </audio>
+                                </td>
+                                <td>M_27_123349_000013_000003.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\M_27_123349_000013_000003.wav">
+                                    </audio>
+                                </td>
+                                                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\u2u/1WDLQM.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\u2u/1WDLQM.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>M_17_362_000012_000000.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\M_17_362_000012_000000.wav">
+                                    </audio>
+                                </td>
+                                <td>F_22_121148_000007_000003.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\F_22_121148_000007_000003.wav">
+                                    </audio>
+                                </td>
+                                                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\u2u/95TLAU.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\u2u/95TLAU.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+
+                            </tr>
+                            
+                            <tr>
+                                <td>F_30_4445_000044_000001.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\F_30_4445_000044_000001.wav">
+                                    </audio>
+                                </td>
+                                <td>F_56_1731_000010_000000.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\F_56_1731_000010_000000.wav">
+                                    </audio>
+                                </td>
+                                                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\u2u/7A9H4F.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\u2u/7A9H4F.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+
+                            </tr>
+                            
+                            <tr>
+                                <td>F_30_4445_000044_000001.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\F_30_4445_000044_000001.wav">
+                                    </audio>
+                                </td>
+                                <td>M_17_363_000006_000001.wav
+                                    <audio controls preload="none">
+                                        <source src="data/unseen_en\M_17_363_000006_000001.wav">
+                                    </audio>
+                                </td>
+                                                                <td>
+									FreeVC
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc\u2u/0E017O.wav">
+                                    </audio> 
+									FreeVC-SR
+                                    <audio controls preload="none">
+                                        <source src="./data/English/freevc_sr\u2u/0E017O.wav">
+                                    </audio>
+									vcvc
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc\s2u/RIQWM5.wav">
+                                    </audio> 
+									vcvc_cer
+                                    <audio controls preload="none">
+                                        <source src="./data/English/vcvc_cer\s2u/RIQWM5.wav">
+                                    </audio>
+                                </td>
+
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    <h2 class="post-title">
+                        English Results
+                    </h2>
+                    <h3 class="post-meta" id="result"></h3>
+                        For the objective evaluation of English results, we employed VCTK as the training dataset and selected speakers from LibriTTS as unseen targets. Regarding data use in test set, refer to section IIIB. CER are obtained using Facebook's Hubert-large-ls960-ft model, while O-SIM was calculated using Titanet-large. Finally, NISQA was employed to compute O-NAT.
+                        <img src="./grid.png" alt="grid" style="width:1000px;height:500px;">
+                    </td>
+                </div>
+            </div>
+        </div>
+		</div>
+
+
+</body>
+
+</html>

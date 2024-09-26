@@ -1,0 +1,16 @@
+F_72_43388.wav|M_65_44999.wav|s2s/B86M6V.wav
+M_65_40008.wav|F_VIVOSSPK38_163.wav|s2s/SCONVC.wav
+M_65_40008.wav|M_63_40559.wav|s2s/FP5NYK.wav
+F_VIVOSSPK38_163.wav|F_VIVOSSPK16_052.wav|s2s/K3PD3B.wav
+M_63_40559.wav|F_biethailong_265_femalenorth.wav|s2u/5YBP09.wav
+F_VIVOSSPK38_163.wav|M_putinsutroiday-13-193_malesouth.wav|s2u/2OS0A1.wav
+F_VIVOSSPK38_163.wav|F_chuyenthoibaocap-22-1005_femalecentral.wav|s2u/W9ZLDN.wav
+M_85_53810.wav|M_phutdunglai-13-3617_malesouth.wav|s2u/9EVEMC.wav
+M_nhungngaythoau-11-1369_malenorth.wav|M_85_53775.wav|u2s/O2PERJ.wav
+F_bimathanhtrinhcuatinhyeu-22-286_femalecentral.wav|F_VIVOSSPK16_015.wav|u2s/LNTDW8.wav
+M_putinsutroiday-13-193_malesouth.wav|F_VIVOSSPK38_163.wav|u2s/VSM6RE.wav
+F_thannguoivadatviet_089_femalenorth.wav|M_85_53833.wav|u2s/L7MEVB.wav
+M_putinsutroiday-13-193_malesouth.wav|M_phutdunglai-11-1986_malenorth.wav|u2u/05L5IS.wav
+M_nhungngaythoau-11-1369_malenorth.wav|F_bimathanhtrinhcuatinhyeu-22-286_femalecentral.wav|u2u/0E017O.wav
+F_chuyenthoibaocap-22-1005_femalecentral.wav|F_biethailong_265_femalenorth.wav|u2u/NRD33L.wav
+F_chodenmaugiaothidamuon_793_femalenorth.wav|M_nhungngaythoau-12-1496_malecentral.wav|u2u/QIC301.wav
